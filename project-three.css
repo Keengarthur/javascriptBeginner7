@@ -1,0 +1,90 @@
+*{
+        text-decoration: none;
+    align-items: center;
+    list-style-type:  none; 
+
+}
+
+body{
+    margin:0;
+    padding:0;
+    background:rgb(207, 198, 198);
+}
+.nav-bar{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0 2rem;
+    box-shadow:0 5px 3rem rgb(211, 204, 204);;
+
+}
+
+a{
+    display: inline-block;
+    margin-left: 2rem;
+}
+img{
+    
+    /* it is usually not ideal to set width and height for an image but this demo is for testing purposes */
+
+    width:2rem;
+    height:1rem;
+    border-radius: 50%;
+
+}
+.moblink{
+    width:fit-content;
+    height:fit-content;
+    text-align: center;
+    background:cyan;
+    display:none;
+    transition:all 0.5s;
+
+}
+
+.moblink span{
+    display: block;
+    width:1rem;
+    height:3px;
+    margin:4px auto;
+    background:rgb(36, 33, 33);
+}
+.moblink.open {
+    transform:rotate(90deg);
+    text-align: center;
+}
+.moblink.open span{
+    transform:rotate(180deg);
+    /* height:1rem;
+    width:3px; */
+}
+.mobile-links{
+    height:0;
+    background:rgb(113, 122, 103);
+
+    overflow:hidden;
+    transition:all .5s;
+}
+.mobile-links a{
+    display:inline-block;
+    margin-top: 5px;
+}
+
+@media screen and (max-width:650px){
+    .moblink{
+        display:inline-block;
+
+    }
+    .div-icons,.deskLinks{
+        display:none;
+    }
+    
+}
+@media screen and (min-width:651px) {
+    .div-icons,.deskLinks{
+        display:block;
+    }
+    .mobile-links{
+        display:none;
+    }
+}
